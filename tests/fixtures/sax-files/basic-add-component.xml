@@ -1,0 +1,14 @@
+<?xml version='1.0'?>
+<sedonaApp>
+  <schema>
+    <kit name='sys'/>
+    <kit name='control'/>
+  </schema>
+  <app>
+    <comp name="add1" type="control::Add2" id="1">
+      <prop name="in1" val="5.0"/>
+      <prop name="in2" val="3.0"/>
+    </comp>
+  </app>
+  <links/>
+</sedonaApp>
