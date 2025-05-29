@@ -1,0 +1,10 @@
+<?xml version='1.0'?>
+<sedonaApp>
+  <schema>
+    <kit name='sys'/>
+  </schema>
+  <app>
+    <comp name="invalid" type="nonexistent::Component" id="1"/>
+  </app>
+  <links/>
+</sedonaApp>
