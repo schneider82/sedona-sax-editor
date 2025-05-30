@@ -1,0 +1,28 @@
+<?xml version='1.0'?>
+<sedonaApp>
+  <schema>
+    <kit name='sys'/>
+    <kit name='BarTechControl'/>
+  </schema>
+  <app>
+    <comp name="loop1" type="BarTechControl::Loop" id="1">
+      <prop name="enable" val="true"/>
+      <prop name="sp" val="22.0"/>
+      <prop name="tr" val="1.5"/>
+      <prop name="ig" val="0.2"/>
+    </comp>
+    <comp name="filter1" type="BarTechControl::AnalogFilter" id="2">
+      <prop name="constant" val="0.1"/>
+      <prop name="exTime" val="1000"/>
+    </comp>
+    <comp name="average1" type="BarTechControl::Average" id="3">
+      <prop name="in1" val="23.5"/>
+      <prop name="in2" val="22.8"/>
+      <prop name="in3" val="23.1"/>
+    </comp>
+  </app>
+  <links>
+    <link from="/filter1.out" to="/loop1.in"/>
+    <link from="/average1.out" to="/filter1.in"/>
+  </links>
+</sedonaApp>
