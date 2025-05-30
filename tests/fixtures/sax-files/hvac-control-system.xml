@@ -1,0 +1,27 @@
+<?xml version='1.0'?>
+<sedonaApp>
+  <schema>
+    <kit name='sys'/>
+    <kit name='control'/>
+  </schema>
+  <app>
+    <comp name="timer1" type="control::Timer" id="1">
+      <prop name="time" val="300"/>
+      <prop name="run" val="true"/>
+    </comp>
+    <comp name="hysteresis1" type="control::Hysteresis" id="2">
+      <prop name="risingEdge" val="75.0"/>
+      <prop name="fallingEdge" val="65.0"/>
+    </comp>
+    <comp name="pid1" type="control::LP" id="3">
+      <prop name="sp" val="22.5"/>
+      <prop name="kp" val="1.2"/>
+      <prop name="ki" val="0.1"/>
+      <prop name="kd" val="0.05"/>
+    </comp>
+  </app>
+  <links>
+    <link from="/timer1.out" to="/hysteresis1.in"/>
+    <link from="/hysteresis1.out" to="/pid1.enable"/>
+  </links>
+</sedonaApp>
