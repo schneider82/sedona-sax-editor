@@ -1,0 +1,17 @@
+<?xml version='1.0'?>
+<sedonaApp>
+  <schema>
+    <kit name='sys'/>
+    <kit name='nonexistent'/>
+  </schema>
+  <app>
+    <comp name="invalid1" type="nonexistent::Component" id="1"/>
+    <comp name="missing_type" id="2"/>
+    <comp name="invalid_property" type="control::Add2" id="3">
+      <prop name="nonexistent_prop" val="123"/>
+    </comp>
+  </app>
+  <links>
+    <link from="/invalid1.nonexistent" to="/missing_type.input"/>
+  </links>
+</sedonaApp>
